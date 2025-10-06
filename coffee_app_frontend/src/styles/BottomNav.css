@@ -4,81 +4,93 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 12px 16px;
-    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    padding: 0 20px;
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
     pointer-events: none;
 }
 
 .bottom-nav-container {
-    max-width: 420px;
-    height: 64px;
+    max-width: 400px;
+    height: 68px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    border-radius: 32px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     pointer-events: auto;
 }
 
 .nav-item {
+    position: relative;
+    text-decoration: none;
+    padding: 8px 0;
+    min-width: 64px;
+}
+
+.nav-item-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4px;
-    color: #6B7280;
-    text-decoration: none;
-    transition: color 160ms ease;
-    padding: 8px 16px;
-    border-radius: 12px;
-}
-
-.nav-item:hover {
-    color: #4B5563;
-}
-
-.nav-item.active {
-    color: var(--primary);
-    position: relative;
-}
-
-.nav-item.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 4px;
-    background: var(--primary);
-    border-radius: 50%;
 }
 
 .nav-icon {
     width: 24px;
     height: 24px;
-    opacity: 0.7;
-    transition: opacity 160ms ease;
-}
-
-.nav-item.active .nav-icon {
-    opacity: 1;
+    opacity: 0.8;
+    transition: opacity 200ms ease;
 }
 
 .nav-label {
     font-size: 11px;
     font-weight: 500;
-    letter-spacing: 0.3px;
+    color: #6B7280;
+    transition: color 200ms ease;
 }
 
+/* Active state styling */
+.nav-item.is-active .nav-icon {
+    opacity: 1;
+}
+
+.nav-item.is-active .nav-label {
+    color: #2563EB;
+}
+
+.nav-item.is-active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 32px;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 12px;
+    z-index: -1;
+}
+
+/* Focus styles */
 .nav-item:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+    border-radius: 12px;
 }
 
-@supports not (backdrop-filter: blur(10px)) {
+/* Hover effects */
+.nav-item:hover .nav-icon {
+    opacity: 0.9;
+}
+
+.nav-item:hover .nav-label {
+    color: #4B5563;
+}
+
+/* Fallback for browsers that don't support backdrop-filter */
+@supports not (backdrop-filter: blur(16px)) {
     .bottom-nav-container {
         background: rgba(255, 255, 255, 0.95);
     }
