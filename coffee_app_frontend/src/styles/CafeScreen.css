@@ -1,0 +1,203 @@
+/* Import and namespace the original cafe screen CSS */
+:root {
+    /* Ocean Professional theme colors */
+    --primary: #2563EB;
+    --secondary: #F59E0B;
+    --success: #F59E0B;
+    --error: #EF4444;
+    --background: #f9fafb;
+    --surface: #ffffff;
+    --text: #111827;
+    --gradient: linear-gradient(to bottom, rgba(37,99,235,0.1), #f8f9fa);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cafe-screen {
+    position: relative;
+    width: 375px;
+    height: 812px;
+    background: var(--surface);
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section */
+.header {
+    position: relative;
+    width: 375px;
+    height: 334px;
+}
+
+.header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.back-button {
+    position: absolute;
+    top: 44px;
+    left: 26px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.dot-active {
+    background: white;
+}
+
+/* Cafe Info Section */
+.cafe-info {
+    padding: 20px;
+    margin-top: -28px;
+    position: relative;
+    z-index: 1;
+}
+
+.cafe-info h1 {
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.star-icon {
+    width: 13px;
+    height: 12px;
+}
+
+.rating span, .location {
+    font-size: 16px;
+    color: rgba(17, 24, 39, 0.8);
+}
+
+/* Category Navigation */
+.categories {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.category-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(17, 24, 39, 0.6);
+}
+
+.category-btn.active {
+    color: var(--primary);
+}
+
+.category-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.category-btn span {
+    font-size: 16px;
+}
+
+/* Menu Items */
+.menu-items {
+    padding: 20px;
+}
+
+.menu-item {
+    position: relative;
+    display: flex;
+    gap: 26px;
+    padding: 18px;
+    background: var(--surface);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 16px;
+}
+
+.item-image {
+    width: 89px;
+    height: 105px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details h2 {
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.item-details p {
+    font-size: 16px;
+    color: rgba(17, 24, 39, 0.7);
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.price {
+    font-size: 16px;
+    color: var(--text);
+}
+
+.add-btn {
+    position: absolute;
+    top: -13px;
+    right: -13px;
+    width: 36px;
+    height: 36px;
+    background: var(--primary);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn:hover {
+    background: #1d4ed8;
+}
