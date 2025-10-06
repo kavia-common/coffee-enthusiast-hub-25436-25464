@@ -1,7 +1,7 @@
+/* Ocean Professional theme colors with exact measurements from screen_1:3.json */
 :root {
-    /* Ocean Professional theme colors */
     --primary: #2563EB;
-    --secondary: #F59E0B;
+    --secondary: #F59E0B; 
     --success: #F59E0B;
     --error: #EF4444;
     --background: #f9fafb;
@@ -16,6 +16,12 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 /* Screen Container - exact dimensions from Figma JSON */
 .home-screen {
     position: relative;
@@ -27,7 +33,7 @@
     overflow: hidden;
 }
 
-/* Search Section - measurements from Figma JSON */
+/* Search Section - measurements from JSON */
 .search-section {
     margin-bottom: 32px;
 }
@@ -48,6 +54,11 @@
     padding: 0 16px;
     gap: 11px;
     cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-input:hover {
+    background: #f3f4f6;
 }
 
 .search-icon {
@@ -71,11 +82,15 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.2s ease;
 }
 
 .filter-btn:hover {
     background: #f3f4f6;
+}
+
+.filter-btn:active {
+    transform: scale(0.95);
 }
 
 .filter-icon {
@@ -106,7 +121,7 @@
 .dot-1 { top: 0; left: 0; }
 .dot-2 { top: 10px; right: 0; }
 
-/* Hero Section - measurements from Figma JSON */
+/* Hero Section - measurements from JSON */
 .hero-section {
     margin-bottom: 40px;
 }
@@ -134,7 +149,7 @@ h1 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-/* Featured Section - measurements from Figma JSON */
+/* Featured Section - measurements from JSON */
 .featured-section h2 {
     font-size: 23px;
     font-weight: 600;
@@ -229,7 +244,7 @@ h1 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-/* Navigation Bar - measurements from Figma JSON */
+/* Navigation Bar - measurements from JSON */
 .nav-bar {
     position: absolute;
     bottom: 0;

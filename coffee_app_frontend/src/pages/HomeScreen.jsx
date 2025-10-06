@@ -13,6 +13,10 @@ const HomeScreen = () => {
 
     const handleFavorite = (e, shopName) => {
         e.stopPropagation();
+        e.target.closest('.favorite-btn').style.transform = 'scale(0.9)';
+        setTimeout(() => {
+            e.target.closest('.favorite-btn').style.transform = 'scale(1)';
+        }, 100);
         console.log(`Favorited: ${shopName}`);
     };
 
@@ -30,10 +34,19 @@ const HomeScreen = () => {
             <section className="search-section">
                 <div className="search-bar">
                     <div className="search-input" onClick={handleSearch}>
-                        <img src="/assets/figma_image_205_205.png" alt="Search icon" className="search-icon" />
+                        <img 
+                            src="/assets/figma_image_205_205.png" 
+                            alt="Search icon" 
+                            className="search-icon"
+                            draggable="false"
+                        />
                         <span className="search-placeholder">Search</span>
                     </div>
-                    <button className="filter-btn" aria-label="Filter options" onClick={handleFilter}>
+                    <button 
+                        className="filter-btn" 
+                        aria-label="Filter options" 
+                        onClick={handleFilter}
+                    >
                         <div className="filter-icon">
                             <span className="line line-1"></span>
                             <span className="line line-2"></span>
@@ -47,7 +60,12 @@ const HomeScreen = () => {
             {/* Hero Section */}
             <section className="hero-section">
                 <div className="profile-circle">
-                    <img src="/assets/figma_image_203_66.png" alt="Profile" className="profile-img" draggable="false" />
+                    <img 
+                        src="/assets/figma_image_203_66.png" 
+                        alt="Profile" 
+                        className="profile-img" 
+                        draggable="false"
+                    />
                 </div>
                 <h1>Find a coffee shop<br />anywhere</h1>
             </section>
@@ -136,16 +154,36 @@ const HomeScreen = () => {
             <nav className="nav-bar">
                 <div className="nav-item active">
                     <div className="nav-highlight"></div>
-                    <img src="/assets/figma_image_205_154.png" alt="Home" className="nav-icon" draggable="false" />
+                    <img 
+                        src="/assets/figma_image_205_154.png" 
+                        alt="Home" 
+                        className="nav-icon" 
+                        draggable="false"
+                    />
                 </div>
                 <div className="nav-item">
-                    <img src="/assets/figma_image_205_162.png" alt="Favorites" className="nav-icon" draggable="false" />
+                    <img 
+                        src="/assets/figma_image_205_162.png" 
+                        alt="Favorites" 
+                        className="nav-icon" 
+                        draggable="false"
+                    />
                 </div>
                 <div className="nav-item">
-                    <img src="/assets/figma_image_205_157.png" alt="Bookmarks" className="nav-icon" draggable="false" />
+                    <img 
+                        src="/assets/figma_image_205_157.png" 
+                        alt="Bookmarks" 
+                        className="nav-icon" 
+                        draggable="false"
+                    />
                 </div>
                 <div className="nav-item">
-                    <img src="/assets/figma_image_205_160.png" alt="Profile" className="nav-icon" draggable="false" />
+                    <img 
+                        src="/assets/figma_image_205_160.png" 
+                        alt="Profile" 
+                        className="nav-icon" 
+                        draggable="false"
+                    />
                 </div>
             </nav>
         </div>
