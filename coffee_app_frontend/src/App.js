@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './App.css';
 import CafeScreen from './pages/CafeScreen';
 import HomeScreen from './pages/HomeScreen';
+import BottomNav from './components/BottomNav';
 
 // Placeholder components for routes that will be implemented later
 const FavoritesScreen = () => <div className="placeholder-screen">Favorites Screen</div>;
@@ -40,6 +41,7 @@ function App() {
           <Route path="/profile" element={<ProfileScreen />} />
           <Route path="/" element={<Navigate to="/home" replace />} />
         </Routes>
+        <BottomNav />
       </div>
     </Router>
   );
