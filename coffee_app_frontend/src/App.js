@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import CafeScreen from './pages/CafeScreen';
+import HomeScreen from './pages/HomeScreen';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -32,13 +33,7 @@ function App() {
         </nav>
         <Routes>
           <Route path="/cafe" element={<CafeScreen />} />
-          <Route path="/" element={
-            <div className="App-welcome">
-              <h1>Welcome to Coffee Enthusiast Hub</h1>
-              <p>Discover and order amazing coffee drinks</p>
-              <Link to="/cafe" className="cafe-button">Browse Menu</Link>
-            </div>
-          } />
+          <Route path="/" element={<HomeScreen />} />
         </Routes>
       </div>
     </Router>

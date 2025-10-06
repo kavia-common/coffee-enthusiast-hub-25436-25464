@@ -1,0 +1,305 @@
+:root {
+    /* Ocean Professional theme colors */
+    --primary: #2563EB;
+    --secondary: #F59E0B;
+    --success: #F59E0B;
+    --error: #EF4444;
+    --background: #f9fafb;
+    --surface: #ffffff;
+    --text: #111827;
+    --text-secondary: rgba(17, 24, 39, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Screen Container - exact dimensions from Figma JSON */
+.home-screen {
+    position: relative;
+    width: 375px;
+    height: 812px;
+    margin: 0 auto;
+    background: var(--surface);
+    padding: 44px 23px 0;
+    overflow: hidden;
+}
+
+/* Search Section - measurements from Figma JSON */
+.search-section {
+    margin-bottom: 32px;
+}
+
+.search-bar {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.search-input {
+    flex: 1;
+    height: 56px;
+    background: var(--background);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 11px;
+    cursor: pointer;
+}
+
+.search-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.search-placeholder {
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.filter-btn {
+    width: 58px;
+    height: 56px;
+    background: var(--background);
+    border: none;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.filter-btn:hover {
+    background: #f3f4f6;
+}
+
+.filter-icon {
+    position: relative;
+    width: 20px;
+    height: 18px;
+}
+
+.line {
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 1px;
+}
+
+.line-1 { top: 5px; right: 0; }
+.line-2 { top: 15px; left: 0; }
+
+.dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+.dot-1 { top: 0; left: 0; }
+.dot-2 { top: 10px; right: 0; }
+
+/* Hero Section - measurements from Figma JSON */
+.hero-section {
+    margin-bottom: 40px;
+}
+
+.profile-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 52px;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 29px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Featured Section - measurements from Figma JSON */
+.featured-section h2 {
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.coffee-shops {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.coffee-shop-card {
+    width: 160px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.coffee-shop-card:hover {
+    transform: translateY(-2px);
+}
+
+.card-image-container {
+    position: relative;
+    width: 153px;
+    height: 179px;
+    margin-bottom: 14px;
+}
+
+.shop-image {
+    width: 100%;
+    height: 168px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.favorite-btn {
+    position: absolute;
+    top: -11px;
+    right: -11px;
+    width: 36px;
+    height: 36px;
+    background: var(--surface);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.favorite-btn:hover {
+    background: #f8f9fa;
+}
+
+.favorite-btn:active {
+    transform: scale(0.95);
+}
+
+.heart-icon {
+    width: 16px;
+    height: 14px;
+}
+
+.card-content h3 {
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 7px;
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 7px;
+}
+
+.star-icon {
+    width: 13px;
+    height: 12px;
+}
+
+.rating span, .distance {
+    font-size: 16px;
+    color: var(--text-secondary);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Navigation Bar - measurements from Figma JSON */
+.nav-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 114px;
+    background: var(--surface);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 50px;
+    border-top: 1px solid rgba(17, 24, 39, 0.1);
+}
+
+.nav-item {
+    position: relative;
+    width: 70px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.nav-item:hover {
+    transform: translateY(-2px);
+}
+
+.nav-highlight {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 12px;
+}
+
+.nav-item.active .nav-highlight {
+    display: block;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.nav-item.active .nav-icon {
+    opacity: 1;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .coffee-shop-card,
+    .nav-item,
+    .favorite-btn {
+        transition: none;
+    }
+}
+
+/* Focus styles for interactive elements */
+.coffee-shop-card:focus-visible,
+.search-input:focus-visible,
+.filter-btn:focus-visible,
+.favorite-btn:focus-visible,
+.nav-item:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
