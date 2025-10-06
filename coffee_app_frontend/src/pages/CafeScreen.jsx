@@ -7,9 +7,32 @@ const CafeScreen = () => {
     const navigate = useNavigate();
 
     const handleImageError = (e) => {
-        console.log(`Failed to load image: ${e.target.src}`);
+        const imagePath = e.target.src.split('/').pop();
+        console.warn(`Failed to load image: ${imagePath}. Please verify the image exists in public/assets/`);
+        // Log expected vs found path
+        console.warn(`Expected path: /assets/${imagePath}`);
         e.target.onerror = null; // Prevent infinite loop if fallback also fails
     };
+
+    // Verify all required assets on mount
+    useEffect(() => {
+        const requiredImages = [
+            'figma_image_205_198.png', // header image
+            'figma_image_207_60.png',  // star rating
+            'figma_image_207_36.png',  // coffee icon
+            'figma_image_207_20.png',  // drinks icon
+            'figma_image_207_18.png',  // food icon
+            'figma_image_207_65.png',  // menu item image
+        ];
+
+        requiredImages.forEach(img => {
+            const image = new Image();
+            image.onerror = () => {
+                console.warn(`Missing required asset: ${img}`);
+            };
+            image.src = `/assets/${img}`;
+        });
+    }, []);
 
     useEffect(() => {
         const categoryBtns = document.querySelectorAll('.category-btn');
