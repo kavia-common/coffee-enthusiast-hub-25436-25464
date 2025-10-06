@@ -6,8 +6,12 @@ import '../styles/CafeScreen.css';
 const CafeScreen = () => {
     const navigate = useNavigate();
 
+    const handleImageError = (e) => {
+        console.log(`Failed to load image: ${e.target.src}`);
+        e.target.onerror = null; // Prevent infinite loop if fallback also fails
+    };
+
     useEffect(() => {
-        // Setup category switching
         const categoryBtns = document.querySelectorAll('.category-btn');
         categoryBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -50,7 +54,12 @@ const CafeScreen = () => {
         <div className="cafe-screen" role="main">
             {/* Header Section */}
             <header className="header">
-                <img src="/assets/figma_image_205_198.png" alt="Cafe header image" className="header-image" />
+                <img 
+                    src="/assets/figma_image_205_198.png" 
+                    alt="Cafe header image" 
+                    className="header-image"
+                    onError={handleImageError} 
+                />
                 <button className="back-button" aria-label="Go back" onClick={() => navigate('/')}>
                     <svg width="6" height="12" viewBox="0 0 6 12" fill="none">
                         <path d="M5 1L1 6L5 11" stroke="white" strokeWidth="2" strokeLinecap="round"/>
@@ -67,7 +76,12 @@ const CafeScreen = () => {
             <section className="cafe-info">
                 <h1>Haus Coffee</h1>
                 <div className="rating">
-                    <img src="/assets/figma_image_207_60.png" alt="Star rating" className="star-icon" />
+                    <img 
+                        src="/assets/figma_image_207_60.png" 
+                        alt="Star rating" 
+                        className="star-icon"
+                        onError={handleImageError} 
+                    />
                     <span>4.4 429 reviews</span>
                 </div>
                 <p className="location">San Francisco, CA</p>
@@ -76,15 +90,30 @@ const CafeScreen = () => {
             {/* Category Navigation */}
             <nav className="categories">
                 <button className="category-btn active">
-                    <img src="/assets/figma_image_207_36.png" alt="Coffee icon" className="category-icon" />
+                    <img 
+                        src="/assets/figma_image_207_36.png" 
+                        alt="Coffee icon" 
+                        className="category-icon"
+                        onError={handleImageError} 
+                    />
                     <span>Coffee</span>
                 </button>
                 <button className="category-btn">
-                    <img src="/assets/figma_image_207_20.png" alt="Drinks icon" className="category-icon" />
+                    <img 
+                        src="/assets/figma_image_207_20.png" 
+                        alt="Drinks icon" 
+                        className="category-icon"
+                        onError={handleImageError} 
+                    />
                     <span>Drinks</span>
                 </button>
                 <button className="category-btn">
-                    <img src="/assets/figma_image_207_18.png" alt="Food icon" className="category-icon" />
+                    <img 
+                        src="/assets/figma_image_207_18.png" 
+                        alt="Food icon" 
+                        className="category-icon"
+                        onError={handleImageError} 
+                    />
                     <span>Food</span>
                 </button>
             </nav>
@@ -92,7 +121,12 @@ const CafeScreen = () => {
             {/* Menu Items */}
             <section className="menu-items">
                 <div className="menu-item">
-                    <img src="/assets/figma_image_207_65.png" alt="Café mocha" className="item-image" />
+                    <img 
+                        src="/assets/figma_image_207_65.png" 
+                        alt="Café mocha" 
+                        className="item-image"
+                        onError={handleImageError} 
+                    />
                     <div className="item-details">
                         <h2>Café mocha</h2>
                         <p>A chocolate-flavored warm beverage that is a variant of a café latte</p>
@@ -107,7 +141,12 @@ const CafeScreen = () => {
                 </div>
 
                 <div className="menu-item">
-                    <img src="/assets/figma_image_207_65.png" alt="Caramel machiatto" className="item-image" />
+                    <img 
+                        src="/assets/figma_image_207_65.png" 
+                        alt="Caramel machiatto" 
+                        className="item-image"
+                        onError={handleImageError} 
+                    />
                     <div className="item-details">
                         <h2>Caramel machiatto</h2>
                         <p>Steamed milk marked with an espresso and caramel topping</p>
