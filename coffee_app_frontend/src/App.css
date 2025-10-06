@@ -1,54 +1,73 @@
 /* CSS Variables for Theme Management */
 :root {
-  /* Light theme colors */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --text-primary: #282c34;
-  --text-secondary: #61dafb;
-  --border-color: #e9ecef;
-  --button-bg: #007bff;
-  --button-text: #ffffff;
+  /* Ocean Professional theme colors */
+  --primary: #2563EB;
+  --secondary: #F59E0B;
+  --success: #F59E0B;
+  --error: #EF4444;
+  --background: #f9fafb;
+  --surface: #ffffff;
+  --text: #111827;
+  --text-secondary: rgba(17, 24, 39, 0.7);
 }
 
 [data-theme="dark"] {
-  /* Dark theme colors */
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #282c34;
-  --text-primary: #ffffff;
-  --text-secondary: #61dafb;
-  --border-color: #404040;
-  --button-bg: #0056b3;
-  --button-text: #ffffff;
+  --background: #1a1a1a;
+  --surface: #282c34;
+  --text: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
 }
 
 .App {
   text-align: center;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--background);
+  color: var(--text);
   min-height: 100vh;
   transition: background-color 0.3s ease, color 0.3s ease;
-  padding: 20px;
+  position: relative;
 }
 
-.App-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  margin-bottom: 20px;
-}
-
-.cafe-link {
-  text-decoration: none;
-  color: var(--button-bg);
-  font-weight: 600;
-  padding: 8px 16px;
+/* Theme toggle button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
   border-radius: 8px;
-  transition: all 0.3s ease;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.cafe-link:hover {
-  background: rgba(0, 123, 255, 0.1);
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+/* Placeholder screens */
+.placeholder-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 24px;
+  color: var(--text-secondary);
+  background: var(--background);
 }
 
 .App-welcome {
